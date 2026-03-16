@@ -85,7 +85,7 @@ ggplotly(
 
 You might want to change `type` to check the values of the other sensors (e.g., `acceleration` or `light`).
 
-Create tag with cropped date
+Create tag with cropped date:
 
 ```{r tag_create}
 tag <- tag_create(
@@ -95,22 +95,25 @@ tag <- tag_create(
 )
 ```
 
-## Label on trainset shiny app
+## Labeling
 
-Label pressure and acceleration, then click **Save** to write `./data/tag-label/{id}-labeled.csv`.
+Use the trainset shiny app for labeling
 
 ```{r}
 #| eval: false
 trainset(tag)
 ```
 
-## Run labeling checks in trainset
+Once you're done click **Save** to write the labeling file to `./data/tag-label/{id}-labeled.csv`.
 
-Use the **Check** button in the trainset app header to run the built-in checks while you label.
+### Run Trainset checks
 
-## Run [GeoPressureViz checks](https://raphaelnussbaumer.com/GeoPressureManual/labelling-tracks.html#geopressureviz-check)
+Use the **Check** button in the trainset app header to run the built-in checks while you label. See [Trainset checks](https://raphaelnussbaumer.com/GeoPressureManual/labelling-tracks.html#trainset-checks) for more details.
 
-Improve the label file until you can draw a coherent trajectory on GeoPressureViz.
+### Run GeoPressureViz checks
+
+Improve the label file until you can draw a coherent trajectory on GeoPressureViz. See [GeoPressureViz checks](https://raphaelnussbaumer.com/GeoPressureManual/labelling-tracks.html#geopressureviz-check) for more details.
+
 
 ```{r}
 #| eval: false
@@ -127,6 +130,8 @@ tag <- tag_create(
   ) |>
   geopressure_map()
 ```
+
+Run GeoPressureViz:
 
 ```{r}
 #| eval: false
