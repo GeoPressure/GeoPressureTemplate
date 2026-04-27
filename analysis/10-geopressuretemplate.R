@@ -3,7 +3,7 @@ library(GeoPressureR)
 library(GeoLocatoR)
 
 # Get all the tag_id
-list_id <- config2tibble()$id
+list_id <- config_to_tibble()$id
 
 
 ## OPTION 1: Run workflow step-by-step for a single tag
