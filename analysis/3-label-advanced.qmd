@@ -44,7 +44,7 @@ tag <- tag_create(
 ## Label the tag
 
 ```{r label_trainset}
-trainset(tag)
+trainset(id)
 ```
 
 ## Compute pressure map
