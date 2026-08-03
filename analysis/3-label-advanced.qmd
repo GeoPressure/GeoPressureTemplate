@@ -19,7 +19,7 @@ id <- "18LX"
 ```{r crop_date}
 ggplotly(
   tag_create(id, quiet = TRUE) |>
-    plot(type = "pressure", plot_plotly = FALSE) +
+    plot(type = "acceleration", plot_plotly = FALSE) +
     geom_vline(
       xintercept = c(
         as.POSIXct(config::get("tag_create", id)$crop_start),
@@ -44,7 +44,7 @@ tag <- tag_create(
 ## Label the tag
 
 ```{r label_trainset}
-trainset(id)
+trainset(tag)
 ```
 
 ## Compute pressure map
@@ -66,7 +66,7 @@ Directly plot the likelihood map and draw the path. Query the pressure only for 
 geopressureviz(
   id,
   # path = tag2path(tag, interp = 1) # interpolate positions of stap lasting < 1 day.
-  # path = path_geopressureviz # if already run geopressureviz
+  # path = read.csv("data/interim/{id}-path-geopressureviz.csv") # or shiny::getShinyOption("path_geopressureviz")
   # path = pressurepath # Use this once computed (see below)
 )
 ```
@@ -139,8 +139,11 @@ geopressureviz(tag)
 Final check with the time-consuming `pressurepath`, usually performed in `4-geopressuretemplate.R` with full resolution interim file.
 
 ```{r}
-# geopressuretemplate_pressurepath(id)
-load_interim(id)
+pressurepath <- pressurepath_create(
+  tag,
+  # path = read.csv("data/interim/{id}-path-geopressureviz.csv") # or shiny::getShinyOption("path_geopressureviz")
+  path = tag2path(tag, interp = 2),
+)
 plot_pressurepath(pressurepath)
 plot_pressurepath(pressurepath, type = "histogram")
 plot_pressurepath(pressurepath, type = "altitude")
