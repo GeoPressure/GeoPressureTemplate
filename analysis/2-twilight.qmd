@@ -11,7 +11,7 @@ description: https://raphaelnussbaumer.com/GeoPressureManual/geopressuretemplate
 
 -   These scripts should be adapted based on your project, but the same script should run for all your tags. You can always check [the original version online](https://github.com/Rafnuss/GeoPressureTemplate/blob/main/analysis/1-label.qmd).
 -   Make sure you've read the [GeoPressureManual](https://raphaelnussbaumer.com/GeoPressureManual), in particular the [twilight labeling instructions](https://raphaelnussbaumer.com/GeoPressureManual/light-map.html#manual-labelling-of-twilight), before running this script
--   Nothing is saved at the end of the script and it is meant to be like that. Only twilight label file and config.yml should be edited. Use `geopressure.R` for the final run.
+-   Nothing is saved at the end of the script and it is meant to be like that. Only twilight label file and config.yml should be edited. Use `10-geopressuretemplate.R` for the final run.
 :::
 
 ```{r setup}
@@ -63,6 +63,7 @@ geolightviz(tag)
 ## Compute likelihood map
 
 ```{r}
+tag <- twilight_label_read(tag)
 tag <- geolight_map(
   tag,
   twl_calib_adjust = config::get("geolight_map", id)$twl_calib_adjust,

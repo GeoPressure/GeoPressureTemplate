@@ -32,7 +32,7 @@ write_gldp(pkg, "data/datapackage")
 # keyring::key_set_with_value("ZENODO_TOKEN", password = "{your_zenodo_token}")
 pkg <- read_zenodo(
   "{your_reserved_doi}",
-  draft = TRUE, # draft record
+  draft = TRUE # draft record
 )
 
 validate_gldp(pkg)

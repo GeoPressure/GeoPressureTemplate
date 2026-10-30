@@ -45,6 +45,7 @@ tag <- tag_create(
 
 ```{r label_trainset}
 trainset(tag)
+# trainset(id) # once the file is create!
 ```
 
 ## Compute pressure map
@@ -52,7 +53,7 @@ trainset(tag)
 ```{r geopressuretemplate_tag}
 geopressuretemplate_tag(
   id = id,
-  tag_set_map = list(scale = 1, include_min_duration = 6),
+  # tag_set_map = list(scale = 1, include_min_duration = 6),
   geopressuretemplate = list(likelihood = "map_pressure"),
   quiet = TRUE
 )
@@ -92,7 +93,7 @@ plot(tag, type = "twilight")
 Label with geolightviz
 
 ```{r}
-geolightviz(tag)
+geolightviz(tag, stapath = tag2path(tag, interp = 2))
 ```
 
 Check labelled twilights together with the expected twilight lines from the path drawn on geopressureviz
@@ -136,13 +137,13 @@ geopressureviz(tag)
 
 ## Compute pressurepath
 
-Final check with the time-consuming `pressurepath`, usually performed in `4-geopressuretemplate.R` with full resolution interim file.
+Final check with the time-consuming `pressurepath`, usually performed in `10-geopressuretemplate.R` with full resolution interim file.
 
 ```{r}
 pressurepath <- pressurepath_create(
   tag,
   # path = read.csv("data/interim/{id}-path-geopressureviz.csv") # or shiny::getShinyOption("path_geopressureviz")
-  path = tag2path(tag, interp = 2),
+  path = tag2path(tag, interp = 2)
 )
 plot_pressurepath(pressurepath)
 plot_pressurepath(pressurepath, type = "histogram")

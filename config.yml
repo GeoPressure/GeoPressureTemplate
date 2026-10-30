@@ -17,7 +17,7 @@ default:
     # crop_end: NULL
   tag_set_map: # ?tag_set_map()
     extent: [-16, 23, 0, 50] # [W, E, S, N]
-    scale: 5 # 1 (min) -> 1° ; 2 -> 0.5° ; 5 -> 0.2° ; 10 (max) -> 0.1°
+    scale: 4 # 1 -> 1° ; 2 -> 0.5° ; 4 -> 0.25° ; 5 -> 0.2° ; 10 -> 0.1°
     include_stap_id: NULL # default, take all
     include_min_duration: 0 # in hours
   geopressure_map: # ?geopressure_map()
@@ -79,5 +79,4 @@ CB619:
       known_lon: -82.304972
       known_lat: 37.286812
   graph_set_movement:
-    movement:
-      type: "gs"
+    type: "gs"

@@ -10,8 +10,9 @@ list_id <- config_to_tibble()$id
 id <- "18LX" # Run a single tag
 geopressuretemplate_config(id)
 tag <- geopressuretemplate_tag(id)
-graph <- geopressuretemplate_graph(id)
+geopressuretemplate_graph(id)
 geopressuretemplate_pressurepath(id)
+load_interim(id)
 
 
 ## OPTION 2: All tracks, step-by-step
