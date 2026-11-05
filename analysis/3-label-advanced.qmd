@@ -61,13 +61,13 @@ geopressuretemplate_tag(
 
 ## Geopressureviz
 
-Directly plot the likelihood map and draw the path. Query the pressure only for the stap that need to be checked.
+Directly plot the likelihood map and draw the path. Query the pressure only for the stap that need to be checked. Use the **Export CSV** button of the app to keep the edited path (e.g. in `data/interim/`).
 
 ```{r}
 geopressureviz(
   id,
   # path = tag2path(tag, interp = 1) # interpolate positions of stap lasting < 1 day.
-  # path = read.csv("data/interim/{id}-path-geopressureviz.csv") # or shiny::getShinyOption("path_geopressureviz")
+  # path = read_stap(glue::glue("data/interim/{id}-path-geopressureviz.csv")) # path exported with "Export CSV"
   # path = pressurepath # Use this once computed (see below)
 )
 ```
@@ -142,7 +142,7 @@ Final check with the time-consuming `pressurepath`, usually performed in `10-geo
 ```{r}
 pressurepath <- pressurepath_create(
   tag,
-  # path = read.csv("data/interim/{id}-path-geopressureviz.csv") # or shiny::getShinyOption("path_geopressureviz")
+  # path = read_stap(glue::glue("data/interim/{id}-path-geopressureviz.csv")) # path exported from GeoPressureViz
   path = tag2path(tag, interp = 2)
 )
 plot_pressurepath(pressurepath)
