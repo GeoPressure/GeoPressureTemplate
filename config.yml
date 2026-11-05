@@ -9,7 +9,7 @@
 # specify all parameters used, even if you use the default value.
 #
 # You can check the documentation of each function to learn what each of these parameters are doing
-# as well as reading https://raphaelnussbaumer.com/GeoPressureManual/geopressuretemplate-workflow.html
+# as well as reading https://geopressure.org/GeoPressureManual/geopressuretemplate-workflow.html
 
 default:
   tag_create: # ?tag_create()

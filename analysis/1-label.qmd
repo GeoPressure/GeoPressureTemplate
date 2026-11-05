@@ -1,7 +1,7 @@
 ---
 title: Tag label
 editor: source
-description: https://raphaelnussbaumer.com/GeoPressureManual/geopressuretemplate-label.html
+description: https://geopressure.org/GeoPressureManual/geopressuretemplate-label.html
 ---
 
 This script will guide you through the tag labeling of pressure and/or acceleration data and creation of the pressure map.
@@ -9,8 +9,8 @@ This script will guide you through the tag labeling of pressure and/or accelerat
 ::: callout-tip
 *Delete this block when you have read!*
 
--   These scripts should be adapted based on your project, but the same script should run for all your tags. You can always check [the original version online](https://github.com/Rafnuss/GeoPressureTemplate/blob/main/analysis/1-label.qmd).
--   Make sure you've read the [GeoPressureManual](https://raphaelnussbaumer.com/GeoPressureManual), in particular the [labeling instructions](https://raphaelnussbaumer.com/GeoPressureManual/labelling-tracks.html), before running this script
+-   These scripts should be adapted based on your project, but the same script should run for all your tags. You can always check [the original version online](https://github.com/GeoPressure/GeoPressureTemplate/blob/main/analysis/1-label.qmd).
+-   Make sure you've read the [GeoPressureManual](https://geopressure.org/GeoPressureManual), in particular the [labeling instructions](https://geopressure.org/GeoPressureManual/labelling-tracks.html), before running this script
 -   Nothing is saved at the end of the script and it is meant to be like that. The goal of this script is to (1) create the tag labels (`./data/tag-label/`) and (2) adapt `config.yml`.
 :::
 
@@ -108,11 +108,11 @@ Once you're done click **Save** to write the labeling file to `./data/tag-label/
 
 ### Run Trainset checks
 
-Use the **Check** button in the trainset app header to run the built-in checks while you label. See [Trainset checks](https://raphaelnussbaumer.com/GeoPressureManual/labelling-tracks.html#trainset-checks) for more details.
+Use the **Check** button in the trainset app header to run the built-in checks while you label. See [Trainset checks](https://geopressure.org/GeoPressureManual/labelling-tracks.html#trainset-checks) for more details.
 
 ### Run GeoPressureViz checks
 
-Improve the label file until you can draw a coherent trajectory on GeoPressureViz. See [GeoPressureViz checks](https://raphaelnussbaumer.com/GeoPressureManual/labelling-tracks.html#geopressureviz-check) for more details.
+Improve the label file until you can draw a coherent trajectory on GeoPressureViz. See [GeoPressureViz checks](https://geopressure.org/GeoPressureManual/labelling-tracks.html#geopressureviz-check) for more details.
 
 
 ```{r}

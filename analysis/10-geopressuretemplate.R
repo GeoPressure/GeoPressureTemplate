@@ -1,4 +1,4 @@
-# https://raphaelnussbaumer.com/GeoPressureManual/geopressuretemplate-workflow.html
+# https://geopressure.org/GeoPressureManual/geopressuretemplate-workflow.html
 library(GeoPressureR)
 library(GeoLocatoR)
 

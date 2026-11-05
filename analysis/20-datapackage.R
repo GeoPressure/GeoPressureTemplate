@@ -1,4 +1,4 @@
-# https://raphaelnussbaumer.com/GeoPressureManual/geolocator-create.html
+# https://geopressure.org/GeoPressureManual/geolocator-create.html
 
 library(GeoLocatoR)
 
