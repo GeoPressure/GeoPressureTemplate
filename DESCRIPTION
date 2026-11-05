@@ -23,8 +23,8 @@ Suggests:
     keyring,
     zen4R
 Remotes: 
-    rafnuss/GeoPressureR,
-    rafnuss/GeoLocatoR
+    GeoPressure/GeoPressureR,
+    GeoPressure/GeoLocatoR
 VignetteBuilder: 
     knitr
 Encoding: UTF-8
