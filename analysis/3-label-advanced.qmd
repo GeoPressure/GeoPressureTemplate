@@ -61,7 +61,7 @@ geopressuretemplate_tag(
 
 ## Geopressureviz
 
-Directly plot the likelihood map and draw the path. Query the pressure only for the stap that need to be checked. Use the **Export CSV** button of the app to keep the edited path (e.g. in `data/interim/`).
+Directly plot the likelihood map and draw the path. Query the pressure only for the stap that need to be checked.
 
 ```{r}
 geopressureviz(

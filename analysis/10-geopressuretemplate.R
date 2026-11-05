@@ -38,7 +38,6 @@ for (id in list_id) {
 }
 
 # 5. Run pressurepath (paths in config: "most_likely" and/or "simulation")
-# For a path exported from GeoPressureViz, use pressurepath_create() (see 3-label-advanced.qmd)
 for (id in list_id) {
   geopressuretemplate_pressurepath(id)
 }
