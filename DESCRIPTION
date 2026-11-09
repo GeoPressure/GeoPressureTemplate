@@ -8,7 +8,7 @@ Description: More detailed description of my research objective and data (one pa
 License: `usethis::use_mit_license()`, `usethis::use_gpl3_license()` or friends to pick a
     license
 Depends: 
-    R (>= 3.5.0)
+    R (>= 4.1.0)
 Imports: 
     config,
     ecmwfr,

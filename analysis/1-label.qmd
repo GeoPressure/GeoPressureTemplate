@@ -51,7 +51,7 @@ Note that the values are written in JSON format (and not `R`), so for a vector/a
     extent: [-16, 23, 0, 50]
     known: 
       - stap_id: 1
-        known_lon: 7.05
+        known_lon: 17.05
         known_lat: 48.9
   bird_create:
     scientific_name: "Acrocephalus arundinaceus" # only if you have different species, otherwise add to default
