@@ -29,7 +29,8 @@ write_gldp(pkg, "data/datapackage")
 # https://zenodo.org/uploads/new
 
 # Step 6. Validate Zenodo draft content before submitting
-# keyring::key_set_with_value("ZENODO_TOKEN", password = "{your_zenodo_token}")
+# Set your Zenodo token once in the R console with keyring::key_set("ZENODO_TOKEN"). See
+# https://geopressure.org/GeoPressureManual/resources.html#accounts-and-keys
 pkg <- read_zenodo(
   "{your_reserved_doi}",
   draft = TRUE # draft record
