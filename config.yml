@@ -80,3 +80,5 @@ CB619:
       known_lat: 37.286812
   graph_set_movement:
     type: "gs"
+  geopressuretemplate:
+    likelihood: ["map_pressure"] # No light data
