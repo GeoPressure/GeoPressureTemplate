@@ -43,16 +43,16 @@ tag_id:
     arguments: value
 ```
 
-Note that the values are written in JSON format (and not `R`), so for a vector/array you need to use `[, ]` and for an array of objects (named lists), you need to use `-` and indentation. Here is an example:
+Note that the values are written in YAML (and not `R`), so for a vector/array you need to use `[, ]`. A table such as `known` is written column-wise, with one value or one value per row in each column. Here is an example:
 
 ``` yaml
 18LX:
   tag_set_map:
     extent: [-16, 23, 0, 50]
-    known: 
-      - stap_id: 1
-        known_lon: 17.05
-        known_lat: 48.9
+    known:
+      stap_id: [1, -1] # -1 -> last stap
+      known_lon: 17.05
+      known_lat: 48.9
   bird_create:
     scientific_name: "Acrocephalus arundinaceus" # only if you have different species, otherwise add to default
 ```
