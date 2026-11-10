@@ -26,7 +26,8 @@ for (id in list_id) {
 # geopressureviz("18LX")
 
 # 3. (optional) Add wind
-# ecmwfr::wf_set_key("abcd1234-foo-bar-98765431-XXXXXXXXXX") <https://cds.climate.copernicus.eu/profile>
+# Needs a Copernicus CDS key: set it once in the R console, never in a script. See
+# https://geopressure.org/GeoPressureManual/resources.html#accounts-and-keys
 for (id in list_id) {
   load_interim(id)
   tag_download_wind(tag)
