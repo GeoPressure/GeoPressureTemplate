@@ -48,3 +48,6 @@ vignettes/*.pdf
 data/interim/*
 data/wind/*
 data/datapackage/*
+
+# Trainset automatic label drafts
+*-labeled-backup.csv
