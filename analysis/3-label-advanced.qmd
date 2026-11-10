@@ -66,7 +66,7 @@ Directly plot the likelihood map and draw the path. Query the pressure only for 
 geopressureviz(
   id,
   # path = tag2path(tag, interp = 1) # interpolate positions of stap lasting < 1 day.
-  # path = read_stap(glue::glue("data/interim/{id}-path-geopressureviz.csv")) # path exported with "Export CSV"
+  # path = read_stap(glue::glue("~/Downloads/{id}-path-geopressureviz.csv")) # "Export CSV" saves to your browser download folder
   # path = pressurepath # Use this once computed (see below)
 )
 ```
@@ -141,7 +141,7 @@ Final check with the time-consuming `pressurepath`, usually performed in `10-geo
 ```{r}
 pressurepath <- pressurepath_create(
   tag,
-  # path = read_stap(glue::glue("data/interim/{id}-path-geopressureviz.csv")) # path exported from GeoPressureViz
+  # path = read_stap(glue::glue("~/Downloads/{id}-path-geopressureviz.csv")) # "Export CSV" of GeoPressureViz, saved to your browser download folder
   path = tag2path(tag, interp = 2)
 )
 plot_pressurepath(pressurepath)
