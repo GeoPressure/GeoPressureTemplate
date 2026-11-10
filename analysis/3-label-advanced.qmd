@@ -22,8 +22,8 @@ ggplotly(
     plot(type = "acceleration", plot_plotly = FALSE) +
     geom_vline(
       xintercept = c(
-        as.POSIXct(config::get("tag_create", id)$crop_start),
-        as.POSIXct(config::get("tag_create", id)$crop_end)
+        as.POSIXct(config::get("tag_create", id)$crop_start, tz = "UTC"),
+        as.POSIXct(config::get("tag_create", id)$crop_end, tz = "UTC")
       ),
       color = "red",
       lwd = 1
