@@ -34,10 +34,9 @@ ggplotly(
 ## Create the tag
 
 ```{r}
-tag <- tag_create(
-  id,
-  crop_start = config::get("tag_create", id)$crop_start,
-  crop_end = config::get("tag_create", id)$crop_end
+tag <- do.call(
+  tag_create,
+  c(list(id = id), geopressuretemplate_config(id)$tag_create)
 )
 ```
 

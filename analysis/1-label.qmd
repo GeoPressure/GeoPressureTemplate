@@ -85,13 +85,12 @@ ggplotly(
 
 You might want to change `type` to check the values of the other sensors (e.g., `acceleration` or `light`).
 
-Create tag with cropped date:
+Create the tag with the crop dates and clock corrections (`time_shift`, `time_drift`) of `config.yml`:
 
 ```{r tag_create}
-tag <- tag_create(
-  id,
-  crop_start = config::get("tag_create", id)$crop_start,
-  crop_end = config::get("tag_create", id)$crop_end
+tag <- do.call(
+  tag_create,
+  c(list(id = id), geopressuretemplate_config(id)$tag_create)
 )
 ```
 
@@ -117,10 +116,9 @@ Improve the label file until you can draw a coherent trajectory on GeoPressureVi
 
 ```{r}
 #| eval: false
-tag <- tag_create(
-  id,
-  crop_start = config::get("tag_create", id)$crop_start,
-  crop_end = config::get("tag_create", id)$crop_end
+tag <- do.call(
+  tag_create,
+  c(list(id = id), geopressuretemplate_config(id)$tag_create)
 ) |>
   tag_label() |>
   tag_set_map(

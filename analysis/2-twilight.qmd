@@ -27,11 +27,9 @@ library(ggplot2)
 Make sure you have already created the label file with the "1-label.qmd" script.
 
 ```{r}
-tag <- tag_create(
-  id,
-  crop_start = config::get("tag_create", id)$crop_start,
-  crop_end = config::get("tag_create", id)$crop_end,
-  quiet = TRUE
+tag <- do.call(
+  tag_create,
+  c(list(id = id, quiet = TRUE), geopressuretemplate_config(id)$tag_create)
 ) |>
   tag_label(quiet = TRUE) |>
   tag_set_map(

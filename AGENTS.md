@@ -128,8 +128,8 @@ in the results come from here. Read `labelling-tracks` first; worked cases (not 
 - After each round, rebuild the tag from `tag_create()` (a tag that went through `tag_set_map()`
   cannot be relabelled), then run `tag_label()`, `tag_set_map()` and `geopressure_map()` with a
   coarse `scale` and a lower `max_sample`. Create the tag from the resolved config, as the workflow
-  does: `do.call(tag_create, c(list(id = id), geopressuretemplate_config(id)$tag_create))`. The
-  analysis scripts pass only the crop dates, so with clock corrections they label other timestamps.
+  does: `do.call(tag_create, c(list(id = id), geopressuretemplate_config(id)$tag_create))`, so that
+  the clock corrections are applied.
 - Summarise for the user: the number and durations of stationary periods and flights
   (`stap2duration()`, `stap2flight()`), the warnings of `tag_label()` (unknown labels, missing
   timesteps), short periods and flights, periods whose `tag$map_pressure` layer is all zero, and
