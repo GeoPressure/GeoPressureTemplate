@@ -7,4 +7,4 @@
 
 Provide a detailed description of my research objective as well as datasets available.
 
-_This repository was generated based on [GeoPressureTemplate (v1.4)](https://github.com/GeoPressure/GeoPressureTemplate)._
+_This repository was generated based on [GeoPressureTemplate (v1.5)](https://github.com/GeoPressure/GeoPressureTemplate)._
