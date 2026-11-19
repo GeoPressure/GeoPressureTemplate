@@ -26,8 +26,9 @@ for (id in list_id) {
 # geopressureviz("18LX")
 
 # 3. (optional) Add wind
-# Needs a Copernicus CDS key: set it once in the R console, never in a script. See
-# https://geopressure.org/GeoPressureManual/resources.html#accounts-and-keys
+# The default source = "cds" needs a Copernicus CDS key: set it once in the R console, never in a
+# script. See https://geopressure.org/GeoPressureManual/resources.html#accounts-and-keys
+# source = "gcs" needs no key or queue but the package Rarr (BiocManager::install("Rarr")).
 for (id in list_id) {
   load_interim(id)
   tag_download_wind(tag)
