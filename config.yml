@@ -37,8 +37,9 @@ default:
     thr_likelihood: 0.99
     thr_gs: 150 # km/h
     # likelihood: NULL # Best to leave NULL.
-  graph_add_wind:
+  graph_add_wind: # ?graph_add_wind()
     thr_as: 90 # km/h
+    # constant_speed: "groundspeed" # or "airspeed": slower, matters for flights > 8 h
   graph_set_movement: # ?graph_set_movement()
     type: "gs" # modify manually to "as" when you have downloaded wind data
     # method: "gamma"

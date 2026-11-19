@@ -32,10 +32,10 @@ and argument against the installed version.
   process: with the default `run_bg = TRUE`, the app stops when the calling R process ends.
 - **Never edit `data/raw-tag/`. Edit a label file only with the user's agreement**, then ask them
   to review it in `trainset()`.
-- **Accounts and keys are the user's.** When a step needs an account (Copernicus CDS for wind,
-  Zenodo to publish), say so and send the user to the accounts section above. Never ask for, type,
-  print or store a key. Keys go in the system keyring, never in a script, `config.yml` or the
-  repository. If you find one in a file, tell the user to revoke it.
+- **Accounts and keys are the user's.** When a step needs an account (Copernicus CDS for wind
+  with `source = "cds"`, Zenodo to publish), say so and send the user to the accounts section
+  above. Never ask for, type, print or store a key. Keys go in the system keyring, never in a
+  script, `config.yml` or the repository. If you find one in a file, tell the user to revoke it.
 - **Tag data are often unpublished.** Do not send them anywhere beyond what GeoPressureR itself
   sends to the GeoPressure API.
 - **Some steps are slow** (pressure maps, pressure paths, wind downloads). Run them in the
@@ -164,7 +164,9 @@ over-edit the calibration periods: their spread is the twilight error.
 
 ### 5. Wind (optional, improves the movement model)
 
-Needs the user's Copernicus CDS account (see the accounts section). Download only once labels and
+The default `source = "cds"` needs the user's Copernicus CDS account (see the accounts section) and
+waits in the CDS queue. `source = "gcs"` needs no account or queue but the package `Rarr`, and
+downloads global fields, so it depends on bandwidth. Download only once labels and
 `extent` are final: `tag_download_wind()` writes one file per flight, named by `stap_id`, covering
 that flight's time, altitudes and the map extent. After any change of labels or extent, download
 again (`overwrite = TRUE`, or delete `data/wind/<id>/`); `graph_add_wind()` stops when a file no
